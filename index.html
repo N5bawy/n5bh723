@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>الحرب العالمية الثانية | عرض تعليمي</title>
+    <title>الحرب العالمية الثانية | عرض تعليمي تفاعلي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,91 +13,39 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-backdrop" aria-hidden="true"></div>
+    <div class="site-bg" aria-hidden="true"></div>
 
-    <div class="intro-overlay" id="introOverlay">
-      <div class="intro-card intro-card--credits">
-        <p class="eyebrow intro-kicker">افتتاحية العرض</p>
-        <h1>تمت المشاركة في هذا الدرس من قبل</h1>
-        <p class="intro-text">
-          هذا العرض تم ترتيبه ليظهر بشكل واضح ومرتب أثناء الشرح، وسيبدأ تلقائيًا
-          خلال لحظات.
+    <main class="page-shell">
+      <header class="hero reveal">
+        <p class="eyebrow">عرض تعليمي تفاعلي مخصص للعرض</p>
+        <h1>الحرب العالمية الثانية</h1>
+        <p class="hero-copy">
+          صفحة عرض تعليمية تشرح الحرب العالمية الثانية بشكل واضح للطالب:
+          البداية، الأسباب، مجريات الحرب، صور تاريخية، وخاتمة بأسئلة تفاعلية
+          تقيس الفهم في نهاية الدرس.
         </p>
 
-        <div class="credits-stack" aria-label="أسماء المشاركين">
-          <div class="credit-line">
-            <span class="credit-index">01</span>
-            <strong>رويد الحبيني</strong>
-          </div>
-          <div class="credit-line">
-            <span class="credit-index">02</span>
-            <strong>عبدالله العاشور</strong>
-          </div>
-          <div class="credit-line">
-            <span class="credit-index">03</span>
-            <strong>عبدالعزيز الهاجري</strong>
-          </div>
+        <div class="hero-facts">
+          <article class="fact-chip">
+            <span>بداية الحرب في أوروبا</span>
+            <strong>1 سبتمبر 1939</strong>
+          </article>
+          <article class="fact-chip">
+            <span>نهاية الحرب في أوروبا</span>
+            <strong>8 مايو 1945</strong>
+          </article>
+          <article class="fact-chip">
+            <span>النهاية الرسمية للحرب عالميًا</span>
+            <strong>2 سبتمبر 1945</strong>
+          </article>
         </div>
-
-        <div class="intro-footer">
-          <span class="class-label">عمل الطلاب | شعبة 1/8</span>
-          <span class="intro-timer">سيبدأ العرض خلال 3 ثوانٍ</span>
-        </div>
-      </div>
-    </div>
-
-    <main class="site-shell">
-      <header class="topbar reveal">
-        <div class="owner-block">
-          <span class="owner-label">إعداد الدرس</span>
-          <strong class="owner-name">رويد الحبيني</strong>
-        </div>
-        <div class="class-chip">عمل الطلاب | شعبة 1/8</div>
       </header>
 
-      <section class="hero reveal">
-        <div class="hero-copy">
-          <p class="eyebrow">عرض تعليمي تفاعلي</p>
-          <h1 class="hero-title">الحرب العالمية الثانية</h1>
-          <p class="hero-lead">
-            عرض مرتب للشرح، يبدأ بأساس الدرس ثم ينتقل للأحداث بالتسلسل، ثم
-            أهم المحطات، وبعدها صور ومقاطع توضيحية، وفي النهاية أسئلة خفيفة
-            للتأكد من فهم الطالب.
-          </p>
-
-          <div class="hero-stats">
-            <article>
-              <span>بداية الحرب في أوروبا</span>
-              <strong>1 سبتمبر 1939</strong>
-            </article>
-            <article>
-              <span>نهاية الحرب في أوروبا</span>
-              <strong>8 مايو 1945</strong>
-            </article>
-            <article>
-              <span>النهاية الرسمية عالميًا</span>
-              <strong>2 سبتمبر 1945</strong>
-            </article>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="participants-card">
-            <p class="participants-label">المشاركون في الدرس</p>
-            <div class="participants-names">
-              <span>رويد الحبيني</span>
-              <span>عبدالله العاشور</span>
-              <span>عبدالعزيز الهاجري</span>
-            </div>
-            <p class="participants-note">
-              ترتيب هذا العرض مناسب للشرح المباشر داخل الفصل أو أثناء العرض على
-              الشاشة.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <nav class="tab-nav reveal" aria-label="أقسام العرض" role="tablist">
+      <nav
+        class="tab-nav reveal"
+        aria-label="التنقل بين أقسام العرض"
+        role="tablist"
+      >
         <button
           id="tab-quiz"
           class="tab-button"
@@ -140,85 +88,201 @@
         role="tabpanel"
         aria-labelledby="tab-basics"
       >
-        <div class="section-head reveal">
+        <div class="panel-header reveal">
           <p class="section-kicker">القسم الأول</p>
           <h2>أساس الدرس</h2>
           <p>
-            في هذا القسم نشرح الفكرة العامة للطالب: ما الحرب؟ من الأطراف؟ ولماذا
-            بدأت؟
+            هذا الجزء يعطي الطالب الصورة الأساسية بطريقة مرتبة: ما الحرب؟
+            لماذا بدأت؟ من الأطراف الرئيسية؟ وما أهم التواريخ التي يجب تذكرها؟
           </p>
         </div>
 
-        <div class="grid-two">
+        <div class="overview-grid">
           <article class="card reveal">
-            <h3>تعريف بسيط وواضح</h3>
+            <h3>تعريف سريع وواضح</h3>
             <p>
               الحرب العالمية الثانية كانت صراعًا عالميًا واسعًا بين دول المحور
               ودول الحلفاء. بدأت في أوروبا عندما غزت ألمانيا بولندا في
-              <strong>1 سبتمبر 1939</strong>، ثم توسعت إلى جبهات كثيرة في
-              أوروبا وآسيا والمحيط الهادئ.
+              <strong>1 سبتمبر 1939</strong>، ثم اتسعت إلى جبهات متعددة في
+              أوروبا وشمال أفريقيا وآسيا والمحيط الهادئ.
             </p>
 
-            <div class="simple-points">
-              <div>
-                <strong>المحور:</strong>
-                ألمانيا، إيطاليا، اليابان.
+            <div class="quick-points">
+              <div class="quick-point">
+                <span class="quick-point-number">1</span>
+                <p>
+                  <strong>المحور:</strong> من أبرز دوله ألمانيا وإيطاليا
+                  واليابان.
+                </p>
               </div>
-              <div>
-                <strong>الحلفاء:</strong>
-                بريطانيا، فرنسا، الاتحاد السوفيتي، الولايات المتحدة، الصين.
+              <div class="quick-point">
+                <span class="quick-point-number">2</span>
+                <p>
+                  <strong>الحلفاء:</strong> من أبرزهم بريطانيا وفرنسا والاتحاد
+                  السوفيتي والولايات المتحدة والصين.
+                </p>
               </div>
-              <div>
-                <strong>الفكرة الأساسية:</strong>
-                بدأت الحرب بسبب التوسع والعدوان، ثم تحولت إلى حرب عالمية غيّرت
-                شكل العالم.
+              <div class="quick-point">
+                <span class="quick-point-number">3</span>
+                <p>
+                  <strong>فكرتها الأساسية للطالب:</strong> الحرب بدأت بتوسع
+                  عسكري وعدوان سياسي، ثم تحولت إلى صراع عالمي غيّر شكل العالم.
+                </p>
               </div>
             </div>
           </article>
 
-          <figure class="card media-card reveal">
+          <figure class="card image-card reveal">
             <button
               type="button"
               class="image-trigger"
               data-image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/World_War_II_in_Europe%2C_1942_%28no_labels%29.svg/1280px-World_War_II_in_Europe%2C_1942_%28no_labels%29.svg.png"
-              data-caption="خريطة توضح اتساع الحرب في أوروبا عام 1942."
+              data-caption="خريطة توضح اتساع الحرب في أوروبا سنة 1942 عند ذروة تقدم دول المحور."
               data-source="https://commons.wikimedia.org/wiki/File:World_War_II_in_Europe,_1942_(no_labels).svg"
             >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/World_War_II_in_Europe%2C_1942_%28no_labels%29.svg/1280px-World_War_II_in_Europe%2C_1942_%28no_labels%29.svg.png"
-                alt="خريطة للحرب العالمية الثانية في أوروبا"
+                alt="خريطة للحرب العالمية الثانية في أوروبا عام 1942"
               />
-              <span class="zoom-note">تكبير الخريطة</span>
+              <span class="zoom-hint">انقر لتكبير الخريطة</span>
             </button>
-            <figcaption>خريطة مناسبة جدًا لبداية الشرح.</figcaption>
+            <figcaption>
+              خريطة تعليمية مناسبة للعرض لفهم اتساع الحرب الأوروبية.
+            </figcaption>
+            <a
+              class="source-link"
+              href="https://commons.wikimedia.org/wiki/File:World_War_II_in_Europe,_1942_(no_labels).svg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              مصدر الخريطة
+            </a>
           </figure>
         </div>
 
-        <div class="grid-three">
+        <div class="causes-grid">
           <article class="card reveal">
-            <h3>أسباب الحرب</h3>
+            <h3>لماذا اندلعت الحرب؟</h3>
             <p>
-              بعد الحرب العالمية الأولى بقيت أوروبا متوترة، وظهرت أنظمة متطرفة
-              اعتمدت على القوة العسكرية والتوسع.
+              بعد الحرب العالمية الأولى بقيت أوروبا متوترة سياسيًا
+              واقتصاديًا، وساهمت آثار معاهدة فرساي في تصاعد الغضب داخل ألمانيا.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>صعود الأنظمة المتطرفة</h3>
+            <p>
+              صعدت النازية في ألمانيا والفاشية في إيطاليا، وازداد الاعتماد على
+              التسلح والعدوان والتوسع بدل الحلول الدبلوماسية.
             </p>
           </article>
 
           <article class="card reveal">
             <h3>الشرارة المباشرة</h3>
             <p>
-              غزو ألمانيا لبولندا هو الحدث المباشر الذي بدأ الحرب في أوروبا،
-              ثم أعلنت بريطانيا وفرنسا الحرب على ألمانيا.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>ما الذي يحفظه الطالب؟</h3>
-            <p>
-              أهم شيء في البداية: تاريخ <strong>1 سبتمبر 1939</strong> وأن
-              الحرب بدأت بالتوسع الألماني.
+              الحدث الحاسم كان غزو ألمانيا لبولندا في
+              <strong>1 سبتمبر 1939</strong>، وبعد يومين أعلنت بريطانيا وفرنسا
+              الحرب على ألمانيا.
             </p>
           </article>
         </div>
+
+        <article class="card reveal">
+          <h3>الخط الزمني الأساسي الذي يجب أن يفهمه الطالب</h3>
+          <ol class="timeline">
+            <li>
+              <div class="timeline-date">1 سبتمبر 1939</div>
+              <p>
+                ألمانيا تغزو بولندا، وتبدأ الحرب العالمية الثانية في أوروبا.
+              </p>
+            </li>
+            <li>
+              <div class="timeline-date">3 سبتمبر 1939</div>
+              <p>بريطانيا وفرنسا تعلنان الحرب على ألمانيا.</p>
+            </li>
+            <li>
+              <div class="timeline-date">يوليو - سبتمبر 1940</div>
+              <p>
+                معركة بريطانيا تُفشل محاولة ألمانيا فرض السيطرة الجوية تمهيدًا
+                لغزو بريطانيا.
+              </p>
+            </li>
+            <li>
+              <div class="timeline-date">22 يونيو 1941</div>
+              <p>
+                عملية بارباروسا: ألمانيا تهاجم الاتحاد السوفيتي، فتتوسع الحرب
+                بشكل هائل على الجبهة الشرقية.
+              </p>
+            </li>
+            <li>
+              <div class="timeline-date">7 ديسمبر 1941</div>
+              <p>
+                اليابان تهاجم بيرل هاربر، فتدخل الولايات المتحدة الحرب بشكل
+                مباشر.
+              </p>
+            </li>
+            <li>
+              <div class="timeline-date">أغسطس 1942 - 2 فبراير 1943</div>
+              <p>
+                معركة ستالينغراد، وتُعد من أهم نقاط التحول ضد ألمانيا على
+                الجبهة الشرقية.
+              </p>
+            </li>
+            <li>
+              <div class="timeline-date">6 يونيو 1944</div>
+              <p>
+                إنزال النورماندي (D-Day)، وبدأ معه تحرير غرب أوروبا من الاحتلال
+                النازي.
+              </p>
+            </li>
+            <li>
+              <div class="timeline-date">8 مايو 1945</div>
+              <p>استسلام ألمانيا ونهاية الحرب في أوروبا.</p>
+            </li>
+            <li>
+              <div class="timeline-date">2 سبتمبر 1945</div>
+              <p>
+                توقيع استسلام اليابان رسميًا على متن السفينة
+                <span lang="en">USS Missouri</span>، وبذلك انتهت الحرب رسميًا
+                على مستوى العالم.
+              </p>
+            </li>
+          </ol>
+        </article>
+
+        <div class="sides-grid">
+          <article class="card reveal">
+            <h3>أهم دول المحور</h3>
+            <ul class="plain-list">
+              <li>ألمانيا النازية</li>
+              <li>إيطاليا الفاشية</li>
+              <li>اليابان الإمبراطورية</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>أهم دول الحلفاء</h3>
+            <ul class="plain-list">
+              <li>بريطانيا</li>
+              <li>فرنسا</li>
+              <li>الاتحاد السوفيتي</li>
+              <li>الولايات المتحدة</li>
+              <li>الصين</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card highlight-card reveal">
+          <h3>الخلاصة التعليمية السريعة</h3>
+          <p>
+            إذا أراد الطالب فهم الدرس بسرعة، فليتذكر أربع نقاط:
+            <strong>بدأت الحرب بالتوسع الألماني</strong>، ثم
+            <strong>تحولت إلى حرب عالمية</strong>، وبعد ذلك
+            <strong>انقلب الميزان ضد المحور</strong>، وفي النهاية
+            <strong>انتهت في أوروبا في 8 مايو 1945</strong> ثم انتهت رسميًا
+            عالميًا في <strong>2 سبتمبر 1945</strong>.
+          </p>
+        </article>
       </section>
 
       <section
@@ -229,177 +293,183 @@
         aria-labelledby="tab-details"
         hidden
       >
-        <div class="section-head reveal">
+        <div class="panel-header reveal">
           <p class="section-kicker">القسم الثاني</p>
           <h2>تفاصيل أكثر</h2>
           <p>
-            هنا نشرح الأحداث بالتسلسل، ثم نعرض أهم المحطات والصور والمقاطع
-            التوضيحية بشكل مختصر وواضح.
+            هذا الجزء مخصص للتوسع: ماذا حدث في الحرب بالتسلسل؟ ما الجبهات
+            الأهم؟ وما النتائج الكبرى التي خرج بها العالم بعد عام 1945؟
           </p>
         </div>
 
-        <article class="card reveal">
-          <h3>التسلسل الزمني للأحداث</h3>
-          <ol class="timeline-list">
-            <li>
-              <strong>1 سبتمبر 1939:</strong>
-              ألمانيا تغزو بولندا، وتبدأ الحرب العالمية الثانية في أوروبا.
-            </li>
-            <li>
-              <strong>3 سبتمبر 1939:</strong>
-              بريطانيا وفرنسا تعلنان الحرب على ألمانيا.
-            </li>
-            <li>
-              <strong>1940:</strong>
-              سقوط فرنسا ومعركة بريطانيا.
-            </li>
-            <li>
-              <strong>22 يونيو 1941:</strong>
-              عملية بارباروسا، هجوم ألمانيا على الاتحاد السوفيتي.
-            </li>
-            <li>
-              <strong>7 ديسمبر 1941:</strong>
-              اليابان تهاجم بيرل هاربر، فتدخل الولايات المتحدة الحرب.
-            </li>
-            <li>
-              <strong>2 فبراير 1943:</strong>
-              نهاية معركة ستالينغراد، وهي من أهم نقاط التحول.
-            </li>
-            <li>
-              <strong>6 يونيو 1944:</strong>
-              إنزال النورماندي وبداية تحرير غرب أوروبا.
-            </li>
-            <li>
-              <strong>8 مايو 1945:</strong>
-              استسلام ألمانيا ونهاية الحرب في أوروبا.
-            </li>
-            <li>
-              <strong>2 سبتمبر 1945:</strong>
-              التوقيع الرسمي على استسلام اليابان، وبذلك انتهت الحرب رسميًا
-              عالميًا.
-            </li>
-          </ol>
-        </article>
-
-        <div class="grid-two">
+        <div class="details-grid">
           <article class="card reveal">
-            <h3>أهم المحطات التي غيّرت مجرى الحرب</h3>
-            <ul class="plain-list">
-              <li>معركة بريطانيا: منعت ألمانيا من السيطرة الكاملة على الغرب.</li>
-              <li>بارباروسا: فتحت جبهة ضخمة ضد ألمانيا في الشرق.</li>
-              <li>بيرل هاربر: أدخلت الولايات المتحدة الحرب.</li>
-              <li>ستالينغراد: من أهم نقاط التحول ضد ألمانيا.</li>
-              <li>إنزال النورماندي: فتح جبهة قوية لتحرير غرب أوروبا.</li>
-            </ul>
+            <h3>ماذا حدث بالضبط؟</h3>
+
+            <details class="story-step" open>
+              <summary>1939 - 1940 | البداية السريعة في أوروبا</summary>
+              <p>
+                بدأت الحرب بغزو بولندا، ثم توسعت السيطرة الألمانية بسرعة داخل
+                أوروبا. وفي عام 1940 سقطت فرنسا، لكن بريطانيا واصلت القتال ولم
+                تنجح ألمانيا في إخضاعها عبر الجو.
+              </p>
+            </details>
+
+            <details class="story-step">
+              <summary>1941 | الحرب تصبح عالمية بالكامل</summary>
+              <p>
+                في <strong>22 يونيو 1941</strong> هاجمت ألمانيا الاتحاد
+                السوفيتي في عملية بارباروسا، ثم في
+                <strong>7 ديسمبر 1941</strong> هاجمت اليابان بيرل هاربر، فدخلت
+                الولايات المتحدة الحرب، وأصبحت المواجهة عالمية بوضوح.
+              </p>
+            </details>
+
+            <details class="story-step">
+              <summary>1942 - 1943 | بداية الانقلاب ضد المحور</summary>
+              <p>
+                وصلت دول المحور إلى ذروة توسعها تقريبًا عام 1942، ثم بدأ
+                التراجع. وتُعد ستالينغراد من أبرز نقاط التحول على الجبهة
+                الشرقية، كما تلقى التوسع الياباني ضربات مؤثرة في المحيط الهادئ.
+              </p>
+            </details>
+
+            <details class="story-step">
+              <summary>1944 - 1945 | الحسم والنهاية</summary>
+              <p>
+                بعد إنزال النورماندي في <strong>6 يونيو 1944</strong> تسارع
+                تحرير غرب أوروبا، بينما تقدم السوفيت من الشرق. وفي
+                <strong>فبراير 1945</strong> عقد قادة الحلفاء مؤتمر يالطا، ثم
+                استسلمت ألمانيا في مايو 1945. وبعد قبول اليابان الاستسلام في
+                <strong>15 أغسطس 1945</strong>، وُقعت وثيقة الاستسلام رسميًا في
+                <strong>2 سبتمبر 1945</strong>.
+              </p>
+            </details>
           </article>
 
           <article class="card reveal">
-            <h3>تنبيه مهم للطالب</h3>
-            <p>
-              لا تخلط بين <strong>8 مايو 1945</strong> و
-              <strong>2 سبتمبر 1945</strong>.
-            </p>
-            <div class="date-boxes">
-              <div>
-                <span>8 مايو 1945</span>
-                <p>نهاية الحرب في أوروبا.</p>
-              </div>
-              <div>
-                <span>2 سبتمبر 1945</span>
-                <p>النهاية الرسمية للحرب عالميًا.</p>
+            <h3>نتائج وآثار الحرب</h3>
+            <ul class="plain-list">
+              <li>دمار هائل في المدن والبنية التحتية عبر قارات متعددة.</li>
+              <li>
+                تغيرات سياسية كبرى وصعود الولايات المتحدة والاتحاد السوفيتي
+                قوتين عظميين.
+              </li>
+              <li>
+                تأسيس الأمم المتحدة عام 1945 في محاولة لمنع حرب عالمية جديدة.
+              </li>
+              <li>
+                الهولوكوست: قُتل ستة ملايين يهودي على يد النظام النازي وحلفائه
+                وفق توثيق المتحف الأمريكي للهولوكوست.
+              </li>
+              <li>
+                تقديرات إجمالي ضحايا الحرب تختلف بين الدراسات، لذلك من الأدق
+                القول إن الحرب خلّفت خسائر بشرية هائلة بعشرات الملايين.
+              </li>
+            </ul>
+
+            <div class="date-note">
+              <h4>تواريخ قد يخلط بينها الطالب</h4>
+              <div class="date-note-grid">
+                <div>
+                  <span>8 مايو 1945</span>
+                  <p>نهاية الحرب في أوروبا.</p>
+                </div>
+                <div>
+                  <span>15 أغسطس 1945</span>
+                  <p>إعلان قبول اليابان الاستسلام.</p>
+                </div>
+                <div>
+                  <span>2 سبتمبر 1945</span>
+                  <p>التوقيع الرسمي الذي أنهى الحرب عالميًا.</p>
+                </div>
               </div>
             </div>
           </article>
         </div>
 
-        <div class="grid-three media-gallery">
-          <figure class="card media-card reveal">
-            <button
-              type="button"
-              class="image-trigger"
-              data-image="https://upload.wikimedia.org/wikipedia/commons/c/c7/Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
-              data-caption="هجوم بيرل هاربر في 7 ديسمبر 1941."
-              data-source="https://commons.wikimedia.org/wiki/File:Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
-                alt="هجوم بيرل هاربر"
-              />
-              <span class="zoom-note">تكبير الصورة</span>
-            </button>
-            <figcaption>صورة ممتازة عند شرح دخول أمريكا الحرب.</figcaption>
-          </figure>
-
-          <figure class="card media-card reveal">
-            <button
-              type="button"
-              class="image-trigger"
-              data-image="https://upload.wikimedia.org/wikipedia/commons/c/cd/Bundesarchiv_Bild_183-R76619%2C_Russland%2C_Kesselschlacht_Stalingrad.jpg"
-              data-caption="مشهد من معركة ستالينغراد."
-              data-source="https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R76619,_Russland,_Kesselschlacht_Stalingrad.jpg"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Bundesarchiv_Bild_183-R76619%2C_Russland%2C_Kesselschlacht_Stalingrad.jpg"
-                alt="معركة ستالينغراد"
-              />
-              <span class="zoom-note">تكبير الصورة</span>
-            </button>
-            <figcaption>مناسبة جدًا عند شرح نقطة التحول.</figcaption>
-          </figure>
-
-          <figure class="card media-card reveal">
-            <button
-              type="button"
-              class="image-trigger"
-              data-image="https://upload.wikimedia.org/wikipedia/commons/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg"
-              data-caption="إنزال النورماندي في 6 يونيو 1944."
-              data-source="https://commons.wikimedia.org/wiki/File:Into_the_Jaws_of_Death_23-0455M_edit.jpg"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg"
-                alt="إنزال النورماندي"
-              />
-              <span class="zoom-note">تكبير الصورة</span>
-            </button>
-            <figcaption>من أفضل الصور لشرح D-Day.</figcaption>
-          </figure>
-        </div>
-
-        <div class="grid-two videos-grid">
-          <article class="card reveal">
-            <p class="video-tag">مقطع قصير توضيحي</p>
-            <h3>بيرل هاربر</h3>
+        <article class="card gallery-card reveal">
+          <div class="gallery-heading">
+            <div>
+              <p class="section-kicker">صور توضيحية</p>
+              <h3>لقطات تاريخية تدعم الشرح</h3>
+            </div>
             <p>
-              هذا المقطع مناسب جدًا عند شرح دخول الولايات المتحدة الحرب. يفضل
-              تشغيله لثوانٍ بسيطة فقط أثناء الشرح.
+              كل صورة قابلة للتكبير أثناء العرض، مع رابط مباشر لمصدرها
+              التاريخي.
             </p>
-            <iframe
-              class="video-frame"
-              src="https://www.youtube-nocookie.com/embed/WvhJboFYFX4?start=0&end=32&rel=0"
-              title="مقطع بيرل هاربر"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </article>
+          </div>
 
-          <article class="card reveal">
-            <p class="video-tag">مقطع قصير توضيحي</p>
-            <h3>إنزال النورماندي</h3>
-            <p>
-              هذا المقطع يخدم شرح إنزال النورماندي ويفضل تشغيل جزء قصير منه
-              فقط حتى لا يطول وقت العرض.
-            </p>
-            <iframe
-              class="video-frame"
-              src="https://www.youtube-nocookie.com/embed/qy8HYhe3Z8E?start=18&end=52&rel=0"
-              title="مقطع إنزال النورماندي"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </article>
-        </div>
+          <div class="visual-grid">
+            <figure class="visual-item">
+              <button
+                type="button"
+                class="image-trigger"
+                data-image="https://upload.wikimedia.org/wikipedia/commons/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg"
+                data-caption="جنود الحلفاء أثناء إنزال النورماندي في 6 يونيو 1944."
+                data-source="https://commons.wikimedia.org/wiki/File:Into_the_Jaws_of_Death_23-0455M_edit.jpg"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg"
+                  alt="صورة لإنزال النورماندي"
+                />
+                <span class="zoom-hint">تكبير الصورة</span>
+              </button>
+              <figcaption>إنزال النورماندي، بداية تحرير غرب أوروبا.</figcaption>
+            </figure>
+
+            <figure class="visual-item">
+              <button
+                type="button"
+                class="image-trigger"
+                data-image="https://upload.wikimedia.org/wikipedia/commons/c/c7/Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
+                data-caption="هجوم بيرل هاربر في 7 ديسمبر 1941 من منظور جوي."
+                data-source="https://commons.wikimedia.org/wiki/File:Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
+                  alt="صورة لهجوم بيرل هاربر"
+                />
+                <span class="zoom-hint">تكبير الصورة</span>
+              </button>
+              <figcaption>هجوم بيرل هاربر الذي سرّع دخول أمريكا للحرب.</figcaption>
+            </figure>
+
+            <figure class="visual-item">
+              <button
+                type="button"
+                class="image-trigger"
+                data-image="https://upload.wikimedia.org/wikipedia/commons/c/cd/Bundesarchiv_Bild_183-R76619%2C_Russland%2C_Kesselschlacht_Stalingrad.jpg"
+                data-caption="مشهد من معركة ستالينغراد، إحدى أهم نقاط التحول ضد ألمانيا."
+                data-source="https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R76619,_Russland,_Kesselschlacht_Stalingrad.jpg"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Bundesarchiv_Bild_183-R76619%2C_Russland%2C_Kesselschlacht_Stalingrad.jpg"
+                  alt="صورة من معركة ستالينغراد"
+                />
+                <span class="zoom-hint">تكبير الصورة</span>
+              </button>
+              <figcaption>ستالينغراد، نقطة تحوّل كبرى على الجبهة الشرقية.</figcaption>
+            </figure>
+
+            <figure class="visual-item">
+              <button
+                type="button"
+                class="image-trigger"
+                data-image="https://upload.wikimedia.org/wikipedia/commons/0/05/Yalta_Conference_%28Churchill%2C_Roosevelt%2C_Stalin%29_%28B%26W%29.jpg"
+                data-caption="قادة الحلفاء في مؤتمر يالطا، فبراير 1945."
+                data-source="https://commons.wikimedia.org/wiki/File:Yalta_Conference_(Churchill,_Roosevelt,_Stalin)_(B%26W).jpg"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/05/Yalta_Conference_%28Churchill%2C_Roosevelt%2C_Stalin%29_%28B%26W%29.jpg"
+                  alt="قادة الحلفاء في مؤتمر يالطا"
+                />
+                <span class="zoom-hint">تكبير الصورة</span>
+              </button>
+              <figcaption>يالطا، فبراير 1945، استعدادًا لمرحلة ما بعد الحرب.</figcaption>
+            </figure>
+          </div>
+        </article>
       </section>
 
       <section
@@ -410,21 +480,22 @@
         aria-labelledby="tab-quiz"
         hidden
       >
-        <div class="section-head reveal">
+        <div class="panel-header reveal">
           <p class="section-kicker">القسم الثالث</p>
           <h2>الأسئلة النهائية</h2>
           <p>
-            اختبار خفيف في نهاية الدرس، وكل سؤال فيه توضيح بسيط بعد الإجابة.
+            هذا الاختبار مخصص لنهاية الدرس. الأسئلة كلها عن الحرب العالمية
+            الثانية، والنتيجة تظهر فورًا مع شرح مختصر بعد كل إجابة.
           </p>
         </div>
 
         <article class="card quiz-shell reveal">
           <div class="quiz-top">
             <div>
-              <p class="eyebrow">اختبار تفاعلي</p>
+              <p class="section-kicker">اختبار تفاعلي</p>
               <h3 id="quiz-question-number">السؤال 1 من 6</h3>
             </div>
-            <div class="quiz-progress-area">
+            <div class="quiz-progress-block">
               <div class="quiz-progress-bar" aria-hidden="true">
                 <span id="quiz-progress-fill"></span>
               </div>
@@ -451,6 +522,102 @@
           <div id="quiz-result" class="quiz-result" hidden></div>
         </article>
       </section>
+
+      <details class="references card reveal">
+        <summary>المصادر التي تم التحقق منها</summary>
+        <ul class="plain-list">
+          <li>
+            <a
+              href="https://www.britannica.com/event/World-War-II"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Britannica: نظرة عامة على الحرب العالمية الثانية وتواريخها
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.britannica.com/question/How-did-World-War-II-end"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Britannica: كيف انتهت الحرب العالمية الثانية
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.britannica.com/question/When-was-the-turning-point-of-the-Battle-of-Stalingrad"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Britannica: نقطة التحول في معركة ستالينغراد
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://history.state.gov/milestones/1937-1945/yalta-conf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Office of the Historian: مؤتمر يالطا 4 - 11 فبراير 1945
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.nationalww2museum.org/media/press-releases/germany-surrenders"
+              target="_blank"
+              rel="noreferrer"
+            >
+              The National WWII Museum: نهاية الحرب في أوروبا يوم 8 مايو 1945
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://encyclopedia.ushmm.org/content/en/article/documenting-numbers-of-victims-of-the-holocaust-and-nazi-persecution"
+              target="_blank"
+              rel="noreferrer"
+            >
+              USHMM: توثيق ضحايا الهولوكوست والاضطهاد النازي
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Into_the_Jaws_of_Death_23-0455M_edit.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Wikimedia Commons: صورة إنزال النورماندي
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Wikimedia Commons: صورة هجوم بيرل هاربر
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R76619,_Russland,_Kesselschlacht_Stalingrad.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Wikimedia Commons: صورة ستالينغراد
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Yalta_Conference_(Churchill,_Roosevelt,_Stalin)_(B%26W).jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Wikimedia Commons: صورة مؤتمر يالطا
+            </a>
+          </li>
+        </ul>
+      </details>
     </main>
 
     <div id="lightbox" class="lightbox" hidden>
@@ -470,11 +637,11 @@
           ×
         </button>
         <img id="lightbox-image" src="" alt="" />
-        <div class="lightbox-copy">
+        <div class="lightbox-caption-wrap">
           <p id="lightbox-caption"></p>
           <a
             id="lightbox-source"
-            class="lightbox-source"
+            class="source-link"
             href="#"
             target="_blank"
             rel="noreferrer"
@@ -484,6 +651,13 @@
         </div>
       </div>
     </div>
+
+    <noscript>
+      <div class="noscript-note">
+        هذا العرض يحتاج إلى JavaScript حتى تعمل الأزرار والاختبار والتكبير
+        التفاعلي للصور.
+      </div>
+    </noscript>
 
     <script src="script.js"></script>
   </body>

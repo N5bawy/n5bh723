@@ -1,24 +1,3 @@
-const introOverlay = document.getElementById("introOverlay");
-
-if (introOverlay) {
-  document.body.classList.add("overlay-open");
-
-  let introClosed = false;
-
-  const closeIntroOverlay = () => {
-    if (introClosed) {
-      return;
-    }
-
-    introClosed = true;
-    introOverlay.classList.add("hidden");
-    document.body.classList.remove("overlay-open");
-  };
-
-  window.setTimeout(closeIntroOverlay, 3000);
-  introOverlay.addEventListener("click", closeIntroOverlay);
-}
-
 const tabButtons = Array.from(document.querySelectorAll(".tab-button"));
 const panels = Array.from(document.querySelectorAll(".panel"));
 
@@ -64,7 +43,9 @@ if ("IntersectionObserver" in window) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.12 }
+    {
+      threshold: 0.12,
+    }
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
@@ -72,80 +53,78 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-activatePanel("basics");
-
 const quizQuestions = [
   {
     question: "متى بدأت الحرب العالمية الثانية في أوروبا؟",
     options: [
       "1 سبتمبر 1939",
-      "7 ديسمبر 1941",
+      "3 سبتمبر 1939",
+      "22 يونيو 1941",
       "6 يونيو 1944",
-      "8 مايو 1945",
     ],
     correctIndex: 0,
     explanation:
-      "بدأت الحرب في أوروبا عندما غزت ألمانيا بولندا في 1 سبتمبر 1939.",
+      "بدأت الحرب في أوروبا عندما غزت ألمانيا بولندا في 1 سبتمبر 1939، أما بريطانيا وفرنسا فأعلنتا الحرب في 3 سبتمبر 1939.",
   },
   {
-    question: "أي حدث أدخل الولايات المتحدة الحرب بشكل مباشر؟",
+    question: "أي حدث أدى إلى دخول الولايات المتحدة الحرب بشكل مباشر؟",
     options: [
       "هجوم بيرل هاربر",
       "معركة بريطانيا",
-      "ستالينغراد",
-      "إنزال النورماندي",
+      "مؤتمر يالطا",
+      "معركة ستالينغراد",
     ],
     correctIndex: 0,
     explanation:
-      "هجوم اليابان على بيرل هاربر في 7 ديسمبر 1941 أدخل الولايات المتحدة الحرب بشكل مباشر.",
+      "الهجوم الياباني على بيرل هاربر في 7 ديسمبر 1941 كان السبب المباشر لدخول الولايات المتحدة الحرب.",
   },
   {
     question: "ما المقصود بعملية بارباروسا؟",
     options: [
-      "هجوم ألمانيا على الاتحاد السوفيتي",
-      "استسلام ألمانيا",
-      "إنزال الحلفاء في فرنسا",
-      "هجوم اليابان على بيرل هاربر",
+      "الغزو الألماني للاتحاد السوفيتي",
+      "الإنزال البحري في النورماندي",
+      "استسلام اليابان الرسمي",
+      "الدفاع البريطاني الجوي عن لندن",
     ],
     correctIndex: 0,
     explanation:
-      "عملية بارباروسا هي الهجوم الألماني على الاتحاد السوفيتي في 22 يونيو 1941.",
+      "عملية بارباروسا بدأت في 22 يونيو 1941، وكانت الغزو الألماني الواسع للاتحاد السوفيتي.",
   },
   {
-    question: "ما المعركة التي تعد من أهم نقاط التحول ضد ألمانيا؟",
+    question: "أي معركة تُعد من أهم نقاط التحول على الجبهة الشرقية؟",
     options: [
-      "ستالينغراد",
-      "بيرل هاربر",
+      "معركة ستالينغراد",
+      "معركة دونكيرك",
+      "مؤتمر يالطا",
       "معركة بريطانيا",
-      "يالطا",
     ],
     correctIndex: 0,
     explanation:
-      "معركة ستالينغراد كانت من أهم نقاط التحول لأنها أضعفت ألمانيا وبدأ بعدها التراجع الواضح.",
+      "معركة ستالينغراد بين أغسطس 1942 وفبراير 1943 تُعد من أبرز نقاط التحول ضد ألمانيا النازية.",
   },
   {
-    question: "ماذا كان إنزال النورماندي؟",
+    question: "ماذا كان إنزال النورماندي في 6 يونيو 1944؟",
     options: [
       "عملية إنزال كبرى للحلفاء في فرنسا",
-      "بداية الحرب في أوروبا",
-      "استسلام اليابان",
-      "اجتماع قادة الحلفاء",
+      "بداية الغزو الألماني لبولندا",
+      "توقيع استسلام ألمانيا",
+      "الهجوم على بيرل هاربر",
     ],
     correctIndex: 0,
     explanation:
-      "إنزال النورماندي في 6 يونيو 1944 فتح جبهة قوية لتحرير غرب أوروبا.",
+      "إنزال النورماندي أو D-Day كان عملية إنزال كبرى للحلفاء في فرنسا وفتح جبهة حاسمة في غرب أوروبا.",
   },
   {
     question: "متى انتهت الحرب العالمية الثانية رسميًا على مستوى العالم؟",
     options: [
-      "2 سبتمبر 1945",
       "8 مايو 1945",
+      "15 أغسطس 1945",
+      "2 سبتمبر 1945",
       "1 سبتمبر 1939",
-      "22 يونيو 1941",
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation:
-      "انتهت الحرب رسميًا عالميًا في 2 سبتمبر 1945 بعد التوقيع الرسمي على استسلام اليابان.",
+      "انتهت الحرب في أوروبا يوم 8 مايو 1945، وقبلت اليابان الاستسلام في 15 أغسطس 1945، لكن النهاية الرسمية عالميًا كانت بتوقيع الاستسلام في 2 سبتمبر 1945.",
   },
 ];
 
@@ -235,13 +214,13 @@ function showResult() {
   let message = "";
 
   if (score === quizQuestions.length) {
-    message = "ممتاز جدًا. واضح أنك استوعبت الدرس بشكل ممتاز.";
+    message = "ممتاز جدًا. واضح أنك استوعبت التسلسل الزمني وأهم أحداث الحرب بدقة.";
   } else if (score >= 4) {
-    message = "نتيجة قوية جدًا، وفهمك للأحداث الرئيسية واضح.";
+    message = "نتيجة قوية جدًا. بقيت لك بعض التفاصيل البسيطة فقط.";
   } else if (score >= 2) {
-    message = "النتيجة جيدة، لكن راجع التسلسل الزمني مرة ثانية.";
+    message = "الأساس جيد، لكن من الأفضل مراجعة قسم أساس الدرس والخط الزمني مرة أخرى.";
   } else {
-    message = "من الأفضل مراجعة الدرس بهدوء ثم إعادة الاختبار.";
+    message = "يحتاج الدرس إلى مراجعة هادئة من البداية، وبعدها أعد الاختبار مرة ثانية.";
   }
 
   resultBox.innerHTML = `
@@ -269,6 +248,7 @@ restartButton.addEventListener("click", () => {
   renderQuestion();
 });
 
+activatePanel("basics");
 renderQuestion();
 
 const lightbox = document.getElementById("lightbox");
@@ -313,11 +293,6 @@ closeLightboxTriggers.forEach((trigger) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && introOverlay && !introOverlay.classList.contains("hidden")) {
-    introOverlay.classList.add("hidden");
-    document.body.classList.remove("overlay-open");
-  }
-
   if (event.key === "Escape" && !lightbox.hidden) {
     closeLightbox();
   }

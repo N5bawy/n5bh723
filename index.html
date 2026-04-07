@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>درس الحرب العالمية الثانية</title>
+    <title>الحرب العالمية الثانية | عرض تعليمي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,181 +13,471 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="site-bg" aria-hidden="true"></div>
+    <div class="page-backdrop" aria-hidden="true"></div>
 
-    <div class="intro-screen">
+    <div class="intro-overlay" id="introOverlay">
       <div class="intro-card">
-        <div class="intro-stage intro-welcome">
-          <p class="eyebrow">عرض طلابي مرتب للشرح</p>
-          <h1 class="intro-title">درس الحرب العالمية الثانية</h1>
-          <p class="intro-lead">
-            عرض مبسط ومرتب يشرح الأحداث بالتسلسل، مع صور ومقاطع وأفكار واضحة
-            تساعد الطالب على الفهم.
-          </p>
+        <p class="eyebrow">عرض طلابي مرتب للشرح</p>
+        <h1>درس الحرب العالمية الثانية</h1>
+        <p class="intro-text">
+          عرض مبسط ومرتب يشرح الأحداث بالتسلسل، مع صور ومقاطع قصيرة تساعد
+          الطالب على الفهم.
+        </p>
+
+        <div class="credits-box">
+          <p class="credits-label">إعداد وعمل الطلاب</p>
+          <div class="credits-list">
+            <span>رويد الحبيني</span>
+            <span>عبدالله العاشور</span>
+            <span>عبدالعزيز الهاجري</span>
+          </div>
+          <p class="class-label">شعبة 1/8</p>
         </div>
 
-        <div class="intro-stage intro-credits">
-          <p class="eyebrow">إعداد وعمل الطلاب</p>
-          <h2 class="section-title">المشاركون في الدرس</h2>
-          <div class="intro-names">
-            <span class="name-chip">رويد الحبيني</span>
-            <span class="name-chip">عبدالله العاشور</span>
-            <span class="name-chip">عبدالعزيز الهاجري</span>
-          </div>
-          <p class="intro-lead">عمل الطلاب | شعبة 1/8</p>
-          <button class="intro-button" type="button">ابدأ العرض</button>
-        </div>
+        <button id="startPresentation" class="primary-btn" type="button">
+          ابدأ العرض
+        </button>
       </div>
     </div>
 
-    <main class="page-shell">
+    <main class="site-shell">
       <header class="topbar reveal">
-        <div class="brand-block">
-          <span class="brand-label">إعداد الدرس</span>
-          <strong class="brand-name">رويد الحبيني</strong>
+        <div class="owner-block">
+          <span class="owner-label">إعداد الدرس</span>
+          <strong class="owner-name">رويد الحبيني</strong>
         </div>
         <div class="class-chip">عمل الطلاب | شعبة 1/8</div>
-        <nav class="page-nav" aria-label="صفحات المشروع">
-          <a href="index.html" class="active">الواجهة</a>
-          <a href="lesson.html">مدخل الدرس</a>
-          <a href="timeline.html">التسلسل الزمني</a>
-          <a href="details.html">أهم المحطات</a>
-          <a href="media.html">الصور والمقاطع</a>
-          <a href="quiz.html">الأسئلة</a>
-        </nav>
       </header>
 
-      <section class="hero-panel reveal">
-        <p class="eyebrow">عرض تعليمي تفاعلي</p>
-        <h1 class="hero-title">الحرب العالمية الثانية</h1>
-        <p class="hero-subtitle">
-          في هذا المشروع تم ترتيب الدرس على صفحات واضحة: بداية الدرس، ثم
-          التسلسل الزمني، ثم أهم المحطات، ثم الصور والمقاطع، وأخيرًا أسئلة
-          ختامية. الهدف أن تصل المعلومة للطالب بشكل سهل وواضح أثناء الشرح.
-        </p>
-
-        <div class="stats-strip">
-          <article class="stat-box">
-            <span>بداية الحرب في أوروبا</span>
-            <strong>1 سبتمبر 1939</strong>
-          </article>
-          <article class="stat-box">
-            <span>نهاية الحرب في أوروبا</span>
-            <strong>8 مايو 1945</strong>
-          </article>
-          <article class="stat-box">
-            <span>النهاية الرسمية عالميًا</span>
-            <strong>2 سبتمبر 1945</strong>
-          </article>
-          <article class="stat-box">
-            <span>تنظيم العرض</span>
-            <strong>عمل الطلاب | شعبة 1/8</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-block reveal">
-        <div class="section-head">
-          <p class="section-kicker">من عمل على الدرس</p>
-          <h2 class="section-title">المشاركون والمساعدون</h2>
-        </div>
-
-        <div class="cover-layout">
-          <article class="card participants-card">
-            <p class="micro-copy">الأسماء المعتمدة في واجهة المشروع</p>
-            <div class="name-chip-wrap">
-              <span class="name-chip">رويد الحبيني</span>
-              <span class="name-chip">عبدالله العاشور</span>
-              <span class="name-chip">عبدالعزيز الهاجري</span>
-            </div>
-            <div class="remember-box">
-              <strong>ملاحظة العرض:</strong>
-              هذا المشروع مرتب ليظهر بشكل طلابي جميل ومهني، مع شرح بسيط وصور
-              وأمثلة تخدم الفهم أثناء التقديم.
-            </div>
-          </article>
-
-          <article class="card page-intro-card">
-            <p class="micro-copy">فكرة المشروع</p>
-            <h3>كيف تم ترتيب الدرس؟</h3>
-            <ul class="plain-list">
-              <li>صفحة أولى للواجهة والتمهيد.</li>
-              <li>صفحة لأساس الدرس: التعريف والأسباب والأطراف.</li>
-              <li>صفحة للتسلسل الزمني من 1939 إلى 1945.</li>
-              <li>صفحة لأهم المحطات التي غيّرت سير الحرب.</li>
-              <li>صفحة للصور والمقاطع التوضيحية.</li>
-              <li>صفحة أخيرة للأسئلة النهائية.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-block reveal">
-        <div class="section-head">
-          <p class="section-kicker">خريطة التنقل</p>
-          <h2 class="section-title">صفحات المشروع</h2>
+      <section class="hero reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">عرض تعليمي تفاعلي</p>
+          <h1>الحرب العالمية الثانية</h1>
           <p>
-            يمكن فتح الصفحات بالترتيب حتى يكون الشرح متسلسلًا من البداية إلى
-            النهاية.
+            عرض مرتب للشرح، يبدأ بأساس الدرس ثم ينتقل للأحداث بالتسلسل، ثم
+            أهم المحطات، وبعدها صور ومقاطع توضيحية، وفي النهاية أسئلة خفيفة
+            للتأكد من فهم الطالب.
+          </p>
+
+          <div class="hero-stats">
+            <article>
+              <span>بداية الحرب في أوروبا</span>
+              <strong>1 سبتمبر 1939</strong>
+            </article>
+            <article>
+              <span>نهاية الحرب في أوروبا</span>
+              <strong>8 مايو 1945</strong>
+            </article>
+            <article>
+              <span>النهاية الرسمية عالميًا</span>
+              <strong>2 سبتمبر 1945</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="participants-card">
+            <p class="participants-label">المشاركون في الدرس</p>
+            <div class="participants-names">
+              <span>رويد الحبيني</span>
+              <span>عبدالله العاشور</span>
+              <span>عبدالعزيز الهاجري</span>
+            </div>
+            <p class="participants-note">
+              ترتيب هذا العرض مناسب للشرح المباشر داخل الفصل أو أثناء العرض على
+              الشاشة.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="tab-nav reveal" aria-label="أقسام العرض" role="tablist">
+        <button
+          id="tab-quiz"
+          class="tab-button"
+          type="button"
+          data-target="quiz"
+          role="tab"
+          aria-controls="panel-quiz"
+          aria-selected="false"
+        >
+          الأسئلة النهائية
+        </button>
+        <button
+          id="tab-details"
+          class="tab-button"
+          type="button"
+          data-target="details"
+          role="tab"
+          aria-controls="panel-details"
+          aria-selected="false"
+        >
+          تفاصيل أكثر
+        </button>
+        <button
+          id="tab-basics"
+          class="tab-button active"
+          type="button"
+          data-target="basics"
+          role="tab"
+          aria-controls="panel-basics"
+          aria-selected="true"
+        >
+          أساس الدرس
+        </button>
+      </nav>
+
+      <section
+        id="panel-basics"
+        class="panel active"
+        data-panel="basics"
+        role="tabpanel"
+        aria-labelledby="tab-basics"
+      >
+        <div class="section-head reveal">
+          <p class="section-kicker">القسم الأول</p>
+          <h2>أساس الدرس</h2>
+          <p>
+            في هذا القسم نشرح الفكرة العامة للطالب: ما الحرب؟ من الأطراف؟ ولماذا
+            بدأت؟
           </p>
         </div>
 
-        <div class="route-grid">
-          <a class="route-card" href="lesson.html">
-            <p class="micro-copy">الصفحة 1</p>
-            <h3>مدخل الدرس</h3>
-            <p>تعريف الحرب، الأطراف، الأسباب، وما الذي يجب فهمه أولًا.</p>
-            <span>افتح الصفحة</span>
-          </a>
-
-          <a class="route-card" href="timeline.html">
-            <p class="micro-copy">الصفحة 2</p>
-            <h3>التسلسل الزمني</h3>
-            <p>الأحداث الرئيسية مرتبة من بداية الحرب حتى نهايتها الرسمية.</p>
-            <span>افتح الصفحة</span>
-          </a>
-
-          <a class="route-card" href="details.html">
-            <p class="micro-copy">الصفحة 3</p>
-            <h3>أهم المحطات</h3>
-            <p>المعارك والأحداث التي غيّرت ميزان الحرب بشكل واضح.</p>
-            <span>افتح الصفحة</span>
-          </a>
-
-          <a class="route-card" href="media.html">
-            <p class="micro-copy">الصفحة 4</p>
-            <h3>الصور والمقاطع</h3>
-            <p>صور أرشيفية ومقاطع قصيرة تدعم كلام المقدم أثناء الشرح.</p>
-            <span>افتح الصفحة</span>
-          </a>
-
-          <a class="route-card" href="quiz.html">
-            <p class="micro-copy">الصفحة 5</p>
-            <h3>الأسئلة النهائية</h3>
-            <p>اختبار خفيف في آخر الدرس للتأكد من وصول الفكرة للطالب.</p>
-            <span>افتح الصفحة</span>
-          </a>
-
-          <article class="route-card">
-            <p class="micro-copy">الهدف</p>
-            <h3>شرح واضح ومنظم</h3>
+        <div class="grid-two">
+          <article class="card reveal">
+            <h3>تعريف بسيط وواضح</h3>
             <p>
-              ترتيب الصفحات يساعدك في العرض حتى تنتقل من فكرة إلى فكرة بشكل
-              طبيعي ومرتب.
+              الحرب العالمية الثانية كانت صراعًا عالميًا واسعًا بين دول المحور
+              ودول الحلفاء. بدأت في أوروبا عندما غزت ألمانيا بولندا في
+              <strong>1 سبتمبر 1939</strong>، ثم توسعت إلى جبهات كثيرة في
+              أوروبا وآسيا والمحيط الهادئ.
+            </p>
+
+            <div class="simple-points">
+              <div>
+                <strong>المحور:</strong>
+                ألمانيا، إيطاليا، اليابان.
+              </div>
+              <div>
+                <strong>الحلفاء:</strong>
+                بريطانيا، فرنسا، الاتحاد السوفيتي، الولايات المتحدة، الصين.
+              </div>
+              <div>
+                <strong>الفكرة الأساسية:</strong>
+                بدأت الحرب بسبب التوسع والعدوان، ثم تحولت إلى حرب عالمية غيّرت
+                شكل العالم.
+              </div>
+            </div>
+          </article>
+
+          <figure class="card media-card reveal">
+            <button
+              type="button"
+              class="image-trigger"
+              data-image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/World_War_II_in_Europe%2C_1942_%28no_labels%29.svg/1280px-World_War_II_in_Europe%2C_1942_%28no_labels%29.svg.png"
+              data-caption="خريطة توضح اتساع الحرب في أوروبا عام 1942."
+              data-source="https://commons.wikimedia.org/wiki/File:World_War_II_in_Europe,_1942_(no_labels).svg"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/World_War_II_in_Europe%2C_1942_%28no_labels%29.svg/1280px-World_War_II_in_Europe%2C_1942_%28no_labels%29.svg.png"
+                alt="خريطة للحرب العالمية الثانية في أوروبا"
+              />
+              <span class="zoom-note">تكبير الخريطة</span>
+            </button>
+            <figcaption>خريطة مناسبة جدًا لبداية الشرح.</figcaption>
+          </figure>
+        </div>
+
+        <div class="grid-three">
+          <article class="card reveal">
+            <h3>أسباب الحرب</h3>
+            <p>
+              بعد الحرب العالمية الأولى بقيت أوروبا متوترة، وظهرت أنظمة متطرفة
+              اعتمدت على القوة العسكرية والتوسع.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>الشرارة المباشرة</h3>
+            <p>
+              غزو ألمانيا لبولندا هو الحدث المباشر الذي بدأ الحرب في أوروبا،
+              ثم أعلنت بريطانيا وفرنسا الحرب على ألمانيا.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>ما الذي يحفظه الطالب؟</h3>
+            <p>
+              أهم شيء في البداية: تاريخ <strong>1 سبتمبر 1939</strong> وأن
+              الحرب بدأت بالتوسع الألماني.
             </p>
           </article>
         </div>
       </section>
 
-      <div class="pager reveal">
-        <span class="pager-link secondary">هذه هي الواجهة الرئيسية</span>
-        <a class="pager-link primary" href="lesson.html">ابدأ من مدخل الدرس</a>
-      </div>
+      <section
+        id="panel-details"
+        class="panel"
+        data-panel="details"
+        role="tabpanel"
+        aria-labelledby="tab-details"
+        hidden
+      >
+        <div class="section-head reveal">
+          <p class="section-kicker">القسم الثاني</p>
+          <h2>تفاصيل أكثر</h2>
+          <p>
+            هنا نشرح الأحداث بالتسلسل، ثم نعرض أهم المحطات والصور والمقاطع
+            التوضيحية بشكل مختصر وواضح.
+          </p>
+        </div>
 
-      <p class="footer-note reveal">
-        المشروع منظم ليعمل كعرض على GitHub Pages أو بشكل محلي من داخل المتصفح.
-      </p>
+        <article class="card reveal">
+          <h3>التسلسل الزمني للأحداث</h3>
+          <ol class="timeline-list">
+            <li>
+              <strong>1 سبتمبر 1939:</strong>
+              ألمانيا تغزو بولندا، وتبدأ الحرب العالمية الثانية في أوروبا.
+            </li>
+            <li>
+              <strong>3 سبتمبر 1939:</strong>
+              بريطانيا وفرنسا تعلنان الحرب على ألمانيا.
+            </li>
+            <li>
+              <strong>1940:</strong>
+              سقوط فرنسا ومعركة بريطانيا.
+            </li>
+            <li>
+              <strong>22 يونيو 1941:</strong>
+              عملية بارباروسا، هجوم ألمانيا على الاتحاد السوفيتي.
+            </li>
+            <li>
+              <strong>7 ديسمبر 1941:</strong>
+              اليابان تهاجم بيرل هاربر، فتدخل الولايات المتحدة الحرب.
+            </li>
+            <li>
+              <strong>2 فبراير 1943:</strong>
+              نهاية معركة ستالينغراد، وهي من أهم نقاط التحول.
+            </li>
+            <li>
+              <strong>6 يونيو 1944:</strong>
+              إنزال النورماندي وبداية تحرير غرب أوروبا.
+            </li>
+            <li>
+              <strong>8 مايو 1945:</strong>
+              استسلام ألمانيا ونهاية الحرب في أوروبا.
+            </li>
+            <li>
+              <strong>2 سبتمبر 1945:</strong>
+              التوقيع الرسمي على استسلام اليابان، وبذلك انتهت الحرب رسميًا
+              عالميًا.
+            </li>
+          </ol>
+        </article>
+
+        <div class="grid-two">
+          <article class="card reveal">
+            <h3>أهم المحطات التي غيّرت مجرى الحرب</h3>
+            <ul class="plain-list">
+              <li>معركة بريطانيا: منعت ألمانيا من السيطرة الكاملة على الغرب.</li>
+              <li>بارباروسا: فتحت جبهة ضخمة ضد ألمانيا في الشرق.</li>
+              <li>بيرل هاربر: أدخلت الولايات المتحدة الحرب.</li>
+              <li>ستالينغراد: من أهم نقاط التحول ضد ألمانيا.</li>
+              <li>إنزال النورماندي: فتح جبهة قوية لتحرير غرب أوروبا.</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>تنبيه مهم للطالب</h3>
+            <p>
+              لا تخلط بين <strong>8 مايو 1945</strong> و
+              <strong>2 سبتمبر 1945</strong>.
+            </p>
+            <div class="date-boxes">
+              <div>
+                <span>8 مايو 1945</span>
+                <p>نهاية الحرب في أوروبا.</p>
+              </div>
+              <div>
+                <span>2 سبتمبر 1945</span>
+                <p>النهاية الرسمية للحرب عالميًا.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-three media-gallery">
+          <figure class="card media-card reveal">
+            <button
+              type="button"
+              class="image-trigger"
+              data-image="https://upload.wikimedia.org/wikipedia/commons/c/c7/Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
+              data-caption="هجوم بيرل هاربر في 7 ديسمبر 1941."
+              data-source="https://commons.wikimedia.org/wiki/File:Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Attack_on_Pearl_Harbor_Japanese_planes_view.jpg"
+                alt="هجوم بيرل هاربر"
+              />
+              <span class="zoom-note">تكبير الصورة</span>
+            </button>
+            <figcaption>صورة ممتازة عند شرح دخول أمريكا الحرب.</figcaption>
+          </figure>
+
+          <figure class="card media-card reveal">
+            <button
+              type="button"
+              class="image-trigger"
+              data-image="https://upload.wikimedia.org/wikipedia/commons/c/cd/Bundesarchiv_Bild_183-R76619%2C_Russland%2C_Kesselschlacht_Stalingrad.jpg"
+              data-caption="مشهد من معركة ستالينغراد."
+              data-source="https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R76619,_Russland,_Kesselschlacht_Stalingrad.jpg"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Bundesarchiv_Bild_183-R76619%2C_Russland%2C_Kesselschlacht_Stalingrad.jpg"
+                alt="معركة ستالينغراد"
+              />
+              <span class="zoom-note">تكبير الصورة</span>
+            </button>
+            <figcaption>مناسبة جدًا عند شرح نقطة التحول.</figcaption>
+          </figure>
+
+          <figure class="card media-card reveal">
+            <button
+              type="button"
+              class="image-trigger"
+              data-image="https://upload.wikimedia.org/wikipedia/commons/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg"
+              data-caption="إنزال النورماندي في 6 يونيو 1944."
+              data-source="https://commons.wikimedia.org/wiki/File:Into_the_Jaws_of_Death_23-0455M_edit.jpg"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg"
+                alt="إنزال النورماندي"
+              />
+              <span class="zoom-note">تكبير الصورة</span>
+            </button>
+            <figcaption>من أفضل الصور لشرح D-Day.</figcaption>
+          </figure>
+        </div>
+
+        <div class="grid-two videos-grid">
+          <article class="card reveal">
+            <p class="video-tag">مقطع قصير توضيحي</p>
+            <h3>بيرل هاربر</h3>
+            <p>
+              هذا المقطع مناسب جدًا عند شرح دخول الولايات المتحدة الحرب. يفضل
+              تشغيله لثوانٍ بسيطة فقط أثناء الشرح.
+            </p>
+            <iframe
+              class="video-frame"
+              src="https://www.youtube-nocookie.com/embed/WvhJboFYFX4?start=0&end=32&rel=0"
+              title="مقطع بيرل هاربر"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article class="card reveal">
+            <p class="video-tag">مقطع قصير توضيحي</p>
+            <h3>إنزال النورماندي</h3>
+            <p>
+              هذا المقطع يخدم شرح إنزال النورماندي ويفضل تشغيل جزء قصير منه
+              فقط حتى لا يطول وقت العرض.
+            </p>
+            <iframe
+              class="video-frame"
+              src="https://www.youtube-nocookie.com/embed/qy8HYhe3Z8E?start=18&end=52&rel=0"
+              title="مقطع إنزال النورماندي"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="panel-quiz"
+        class="panel"
+        data-panel="quiz"
+        role="tabpanel"
+        aria-labelledby="tab-quiz"
+        hidden
+      >
+        <div class="section-head reveal">
+          <p class="section-kicker">القسم الثالث</p>
+          <h2>الأسئلة النهائية</h2>
+          <p>
+            اختبار خفيف في نهاية الدرس، وكل سؤال فيه توضيح بسيط بعد الإجابة.
+          </p>
+        </div>
+
+        <article class="card quiz-shell reveal">
+          <div class="quiz-top">
+            <div>
+              <p class="eyebrow">اختبار تفاعلي</p>
+              <h3 id="quiz-question-number">السؤال 1 من 6</h3>
+            </div>
+            <div class="quiz-progress-area">
+              <div class="quiz-progress-bar" aria-hidden="true">
+                <span id="quiz-progress-fill"></span>
+              </div>
+              <p id="quiz-progress-text">التقدم 16%</p>
+            </div>
+          </div>
+
+          <div class="quiz-body">
+            <h4 id="quiz-question" class="quiz-question"></h4>
+            <div id="quiz-options" class="quiz-options"></div>
+          </div>
+
+          <div id="quiz-feedback" class="quiz-feedback" hidden></div>
+
+          <div class="quiz-actions">
+            <button id="quiz-next" type="button" class="primary-btn" hidden>
+              السؤال التالي
+            </button>
+            <button id="quiz-restart" type="button" class="secondary-btn">
+              إعادة الاختبار
+            </button>
+          </div>
+
+          <div id="quiz-result" class="quiz-result" hidden></div>
+        </article>
+      </section>
     </main>
+
+    <div id="lightbox" class="lightbox" hidden>
+      <div class="lightbox-backdrop" data-close-lightbox></div>
+      <div
+        class="lightbox-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lightbox-caption"
+      >
+        <button
+          type="button"
+          class="lightbox-close"
+          aria-label="إغلاق الصورة"
+          data-close-lightbox
+        >
+          ×
+        </button>
+        <img id="lightbox-image" src="" alt="" />
+        <div class="lightbox-copy">
+          <p id="lightbox-caption"></p>
+          <a
+            id="lightbox-source"
+            class="lightbox-source"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            فتح مصدر الصورة
+          </a>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

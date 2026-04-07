@@ -1,0 +1,299 @@
+const tabButtons = Array.from(document.querySelectorAll(".tab-button"));
+const panels = Array.from(document.querySelectorAll(".panel"));
+
+function activatePanel(target) {
+  tabButtons.forEach((button) => {
+    const isActive = button.dataset.target === target;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-selected", String(isActive));
+  });
+
+  panels.forEach((panel) => {
+    const isActive = panel.dataset.panel === target;
+    panel.classList.toggle("active", isActive);
+    panel.hidden = !isActive;
+  });
+
+  const activePanel = panels.find((panel) => panel.dataset.panel === target);
+
+  if (activePanel) {
+    requestAnimationFrame(() => {
+      activePanel
+        .querySelectorAll(".reveal")
+        .forEach((item) => item.classList.add("is-visible"));
+    });
+  }
+}
+
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => activatePanel(button.dataset.target));
+});
+
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+    }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+const quizQuestions = [
+  {
+    question: "متى بدأت الحرب العالمية الثانية في أوروبا؟",
+    options: [
+      "1 سبتمبر 1939",
+      "3 سبتمبر 1939",
+      "22 يونيو 1941",
+      "6 يونيو 1944",
+    ],
+    correctIndex: 0,
+    explanation:
+      "بدأت الحرب في أوروبا عندما غزت ألمانيا بولندا في 1 سبتمبر 1939، أما بريطانيا وفرنسا فأعلنتا الحرب في 3 سبتمبر 1939.",
+  },
+  {
+    question: "أي حدث أدى إلى دخول الولايات المتحدة الحرب بشكل مباشر؟",
+    options: [
+      "هجوم بيرل هاربر",
+      "معركة بريطانيا",
+      "مؤتمر يالطا",
+      "معركة ستالينغراد",
+    ],
+    correctIndex: 0,
+    explanation:
+      "الهجوم الياباني على بيرل هاربر في 7 ديسمبر 1941 كان السبب المباشر لدخول الولايات المتحدة الحرب.",
+  },
+  {
+    question: "ما المقصود بعملية بارباروسا؟",
+    options: [
+      "الغزو الألماني للاتحاد السوفيتي",
+      "الإنزال البحري في النورماندي",
+      "استسلام اليابان الرسمي",
+      "الدفاع البريطاني الجوي عن لندن",
+    ],
+    correctIndex: 0,
+    explanation:
+      "عملية بارباروسا بدأت في 22 يونيو 1941، وكانت الغزو الألماني الواسع للاتحاد السوفيتي.",
+  },
+  {
+    question: "أي معركة تُعد من أهم نقاط التحول على الجبهة الشرقية؟",
+    options: [
+      "معركة ستالينغراد",
+      "معركة دونكيرك",
+      "مؤتمر يالطا",
+      "معركة بريطانيا",
+    ],
+    correctIndex: 0,
+    explanation:
+      "معركة ستالينغراد بين أغسطس 1942 وفبراير 1943 تُعد من أبرز نقاط التحول ضد ألمانيا النازية.",
+  },
+  {
+    question: "ماذا كان إنزال النورماندي في 6 يونيو 1944؟",
+    options: [
+      "عملية إنزال كبرى للحلفاء في فرنسا",
+      "بداية الغزو الألماني لبولندا",
+      "توقيع استسلام ألمانيا",
+      "الهجوم على بيرل هاربر",
+    ],
+    correctIndex: 0,
+    explanation:
+      "إنزال النورماندي أو D-Day كان عملية إنزال كبرى للحلفاء في فرنسا وفتح جبهة حاسمة في غرب أوروبا.",
+  },
+  {
+    question: "متى انتهت الحرب العالمية الثانية رسميًا على مستوى العالم؟",
+    options: [
+      "8 مايو 1945",
+      "15 أغسطس 1945",
+      "2 سبتمبر 1945",
+      "1 سبتمبر 1939",
+    ],
+    correctIndex: 2,
+    explanation:
+      "انتهت الحرب في أوروبا يوم 8 مايو 1945، وقبلت اليابان الاستسلام في 15 أغسطس 1945، لكن النهاية الرسمية عالميًا كانت بتوقيع الاستسلام في 2 سبتمبر 1945.",
+  },
+];
+
+const questionNumber = document.getElementById("quiz-question-number");
+const questionTitle = document.getElementById("quiz-question");
+const optionsContainer = document.getElementById("quiz-options");
+const feedbackBox = document.getElementById("quiz-feedback");
+const nextButton = document.getElementById("quiz-next");
+const restartButton = document.getElementById("quiz-restart");
+const resultBox = document.getElementById("quiz-result");
+const progressFill = document.getElementById("quiz-progress-fill");
+const progressText = document.getElementById("quiz-progress-text");
+
+let currentQuestionIndex = 0;
+let score = 0;
+let locked = false;
+
+function updateProgress() {
+  const progress = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+  progressFill.style.width = `${progress}%`;
+  progressText.textContent = `التقدم ${Math.round(progress)}%`;
+}
+
+function renderQuestion() {
+  locked = false;
+  nextButton.hidden = true;
+  feedbackBox.hidden = true;
+  feedbackBox.textContent = "";
+  resultBox.hidden = true;
+  resultBox.innerHTML = "";
+
+  const current = quizQuestions[currentQuestionIndex];
+  questionNumber.textContent = `السؤال ${currentQuestionIndex + 1} من ${quizQuestions.length}`;
+  questionTitle.textContent = current.question;
+  optionsContainer.innerHTML = "";
+
+  current.options.forEach((option, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "quiz-option";
+    button.textContent = option;
+    button.addEventListener("click", () => handleAnswer(index));
+    optionsContainer.appendChild(button);
+  });
+
+  updateProgress();
+}
+
+function handleAnswer(selectedIndex) {
+  if (locked) {
+    return;
+  }
+
+  locked = true;
+  const current = quizQuestions[currentQuestionIndex];
+  const optionButtons = Array.from(document.querySelectorAll(".quiz-option"));
+
+  optionButtons.forEach((button, index) => {
+    button.disabled = true;
+
+    if (index === current.correctIndex) {
+      button.classList.add("correct");
+    }
+
+    if (index === selectedIndex && index !== current.correctIndex) {
+      button.classList.add("wrong");
+    }
+  });
+
+  if (selectedIndex === current.correctIndex) {
+    score += 1;
+    feedbackBox.innerHTML = `<strong>إجابة صحيحة.</strong><p>${current.explanation}</p>`;
+  } else {
+    feedbackBox.innerHTML = `<strong>إجابة تحتاج مراجعة.</strong><p>${current.explanation}</p>`;
+  }
+
+  feedbackBox.hidden = false;
+  nextButton.hidden = false;
+  nextButton.textContent =
+    currentQuestionIndex === quizQuestions.length - 1
+      ? "اعرض النتيجة"
+      : "السؤال التالي";
+}
+
+function showResult() {
+  const percentage = Math.round((score / quizQuestions.length) * 100);
+  let message = "";
+
+  if (score === quizQuestions.length) {
+    message = "ممتاز جدًا. واضح أنك استوعبت التسلسل الزمني وأهم أحداث الحرب بدقة.";
+  } else if (score >= 4) {
+    message = "نتيجة قوية جدًا. بقيت لك بعض التفاصيل البسيطة فقط.";
+  } else if (score >= 2) {
+    message = "الأساس جيد، لكن من الأفضل مراجعة قسم أساس الدرس والخط الزمني مرة أخرى.";
+  } else {
+    message = "يحتاج الدرس إلى مراجعة هادئة من البداية، وبعدها أعد الاختبار مرة ثانية.";
+  }
+
+  resultBox.innerHTML = `
+    <strong>${score} / ${quizQuestions.length}</strong>
+    <p>نسبتك ${percentage}%</p>
+    <p>${message}</p>
+  `;
+  resultBox.hidden = false;
+  nextButton.hidden = true;
+}
+
+nextButton.addEventListener("click", () => {
+  if (currentQuestionIndex === quizQuestions.length - 1) {
+    showResult();
+    return;
+  }
+
+  currentQuestionIndex += 1;
+  renderQuestion();
+});
+
+restartButton.addEventListener("click", () => {
+  currentQuestionIndex = 0;
+  score = 0;
+  renderQuestion();
+});
+
+activatePanel("basics");
+renderQuestion();
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxCaption = document.getElementById("lightbox-caption");
+const lightboxSource = document.getElementById("lightbox-source");
+const imageTriggers = document.querySelectorAll(".image-trigger");
+const closeLightboxTriggers = document.querySelectorAll("[data-close-lightbox]");
+
+function openLightbox(image, caption, source, altText) {
+  lightboxImage.src = image;
+  lightboxImage.alt = altText;
+  lightboxCaption.textContent = caption;
+  lightboxSource.href = source;
+  lightbox.hidden = false;
+  document.body.classList.add("lightbox-open");
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  lightboxImage.src = "";
+  lightboxImage.alt = "";
+  lightboxCaption.textContent = "";
+  lightboxSource.href = "#";
+  document.body.classList.remove("lightbox-open");
+}
+
+imageTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const image = trigger.dataset.image;
+    const caption = trigger.dataset.caption;
+    const source = trigger.dataset.source;
+    const imageElement = trigger.querySelector("img");
+    const altText = imageElement ? imageElement.alt : "صورة تاريخية";
+
+    openLightbox(image, caption, source, altText);
+  });
+});
+
+closeLightboxTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", closeLightbox);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !lightbox.hidden) {
+    closeLightbox();
+  }
+});
